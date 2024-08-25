@@ -19,8 +19,8 @@ jobs:
 
     - name: Build
       run: cargo build --verbose
-      working-directory: gent/gent
+      working-directory: gent
 
     - name: Run tests
       run: cargo test --verbose
-      working-directory: gent/gent
+      working-directory: gent
