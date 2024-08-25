@@ -1,7 +1,13 @@
 [package]
 name = "gent"
 version = "0.1.0"
+authors = ["himetik <himetik@tutamail.com>"]
 edition = "2021"
 
 [dependencies]
 rand = "0.8"
+
+[[bin]]
+name = "gent"
+path = "src/main.rs"
+

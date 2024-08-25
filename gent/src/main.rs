@@ -17,18 +17,22 @@ fn generate_password(length: usize) -> String {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    
+    // Длина пароля по умолчанию
+    const DEFAULT_LENGTH: usize = 14;
 
-    if args.len() != 2 {
-        eprintln!("Usage: {} <length>", args[0]);
-        process::exit(1);
-    }
-
-    let length: usize = args[1].parse().unwrap_or_else(|_| {
-        eprintln!("Please provide a valid number for password length.");
-        process::exit(1);
-    });
+    // Определите длину пароля из аргументов командной строки или используйте значение по умолчанию
+    let length = match args.get(1) {
+        Some(arg) => match arg.parse::<usize>() {
+            Ok(val) if val > 0 => val,
+            _ => {
+                eprintln!("Please provide a valid positive number for password length.");
+                process::exit(1);
+            }
+        },
+        None => DEFAULT_LENGTH,
+    };
 
     let password = generate_password(length);
     println!("{}", password);
 }
-
