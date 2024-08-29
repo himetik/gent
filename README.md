@@ -1,4 +1,4 @@
-\### Gent is a simple CLI password generator
+### Gent is a simple CLI password generator
 
 ### Installation
 
