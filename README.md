@@ -1,4 +1,4 @@
-### Gent is a simple CLI password generator
+\### Gent is a simple CLI password generator
 
 ### Installation
 
@@ -24,7 +24,7 @@ cargo install --path .
 Generate a password of 16 characters:
 
 ```sh
-gen 16
+gent 16
 yPm?1O>kUQaz@Rc8
 ```
 
